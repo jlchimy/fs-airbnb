@@ -12,8 +12,8 @@ export class LoginPage implements OnInit {
     private navCtrl: NavController
   ) {}
 
-  navToProfile() {
-    this.navCtrl.navigateForward('tabs/profile');
+  navToExplore() {
+    this.navCtrl.navigateForward('tabs');
   }
 
   ngOnInit() {

@@ -1,9 +1,24 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Trips
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+    <ion-list>
+      <b style="font-size: 200%; margin-bottom: 10%">Trips</b>
+      <div><b>No upcoming trips.</b></div>
+      <div style="color: grey">Start exploring your ideas for your next trip.</div>
+    </ion-list>
+    <ion-button (click)="navToExplore()" class="explore">Explore Airbnb</ion-button>
 
-<ion-content></ion-content>
+    <div style="padding: 10% 10% 1% 10%"><b>Where you've been</b></div>
+    <section class="grid">
+        <div>
+          <button (click)="navToDetails()">
+            <img src="assets/icon/capetown.jpg" alt="Cape Town hotel room">
+            <b>Cape Town</b>
+          </button>
+        </div>
+        <div>
+          <button (click)="navToDetails()">
+            <img src="assets/icon/rome.jpg" alt="Rome famous architechture">
+            <b>Rome</b>
+          </button>
+        </div>   
+    </section>
+</ion-content>

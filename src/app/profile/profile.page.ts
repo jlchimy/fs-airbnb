@@ -11,6 +11,11 @@ export class ProfilePage implements OnInit {
   constructor(
     private navCtrl: NavController
   ) { }
+
+  logOut() {
+    this.navCtrl.navigateBack('');
+  }
+
   ngOnInit() {
   }
 
