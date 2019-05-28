@@ -1,9 +1,22 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="login"></ion-back-button>
+      </ion-buttons>
+      <ion-title slot="end">Edit</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list class="top">
+      <ion-avatar id="avatar">
+        <img src="assets/icon/fresh_composite.jpg" alt="selfie">
+      </ion-avatar>
+      <b style="font-size: 200%">Hi, I'm Jacob</b>
+      <div style="color: grey">Joined in 2019</div>
+    </ion-list>
 
-<ion-content>
+    
+  </ion-content>
 
-</ion-content>
+  <ion-button expand="full" (click)="navTabs()">Go to Trips</ion-button>
