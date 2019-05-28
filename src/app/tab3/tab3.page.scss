@@ -1,5 +1,6 @@
 .grid {
     --columns: 300px 300px;
+    --row: 250px;
 }
 
 .explore {
@@ -22,7 +23,7 @@ button {
 .grid {
     display: grid;
     grid-template-columns: var(--columns);
-    grid-auto-rows: 20%;
+    grid-template-rows: var(--row);
     justify-content: center;
     padding: 0 10%;
 }
@@ -30,5 +31,6 @@ button {
 @media all and (max-width: 600px) {
     .grid {
         --columns: 300px;
+        --row: 220px;
     }
 }
