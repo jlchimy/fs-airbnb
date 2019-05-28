@@ -1,0 +1,119 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Jacob Chimerine
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <ion-content>
+    <div class="ion-padding">
+      Computer Science Major at the University of Pennsylvania's School of Engineering and Applied Science.
+    </div>
+    <ion-list>
+      <ion-item>
+        <ion-label>First Name</ion-label>
+        Jacob
+      </ion-item>
+      <ion-item>
+        <ion-label>Last Name</ion-label>
+          Chimerine
+        </ion-item>
+        <ion-item>
+          <ion-label>Github</ion-label>
+          jlchimy
+        </ion-item>
+      <ion-item>
+        <ion-label>Date of Birth</ion-label>
+        <ion-datetime
+        disabled
+        displayFormat="MM/DD/YYYY"
+        [(ngModel)]="myDateOfBirth"
+        ></ion-datetime>
+      </ion-item>
+    </ion-list>
+  
+    <div class="ion-padding">
+        <h2>My Interests</h2>
+        <ion-chip color="primary">
+          <ion-avatar>
+            <img src="assets/icon/mets.png" alt="NYM Logo">
+          </ion-avatar>
+          <ion-label>New York Mets</ion-label>
+        </ion-chip>
+  
+        <ion-chip color="warning">
+            <ion-avatar>
+              <img src="assets/icon/vikings.gif" alt="Vikings Logo">
+            </ion-avatar>
+            <ion-label>Minnesota Vikings</ion-label>
+          </ion-chip>
+    
+        <ion-chip color="danger">
+            <ion-avatar>
+                <img src="assets/icon/running.png" alt="running man">
+              </ion-avatar>
+          <ion-label>Running</ion-label>
+        </ion-chip>
+    
+        <ion-chip color="success">
+          <ion-avatar>
+            <img src="assets/icon/tennis.jpg" alt="tennis ball">
+          </ion-avatar>
+          <ion-label>Tennis</ion-label>
+        </ion-chip>
+    
+        <ion-chip color="secondary">
+          <ion-avatar> 
+            <img src="assets/icon/java.png" alt="Java Logo">
+          </ion-avatar>
+          <ion-label>Java</ion-label>
+        </ion-chip>
+  
+        <ion-chip color="tertiary">
+            <ion-avatar>
+              <img src="assets/icon/ocaml.png" alt="OCaml Logo">
+            </ion-avatar>
+            <ion-label>OCaml</ion-label>
+          </ion-chip>
+    
+        <ion-chip color="dark">
+          <ion-avatar>
+            <img src="assets/icon/music.png" />
+          </ion-avatar>
+          <ion-label>Classic Rock</ion-label>
+        </ion-chip>
+      </div>
+  
+    <section id="contact" class="grid">
+        <div>
+            <form style="display: flex">
+                <legend><b>Find me on Social Media!</b></legend>
+                <input type="text" name="fullname" placeholder="Full name">
+                <input type="text" name="instagram" placeholder="Instagram">
+                <input type="text" name="snapchat" placeholder="Snapchat">
+                <ion-button class="submit" (click)="submitInfo()">Submit</ion-button>
+            </form>
+        </div>
+        <div>
+            <form class = "fit_more">
+                <legend><b>Tell me more about yourself!</b></legend>
+                <input type="radio" name="year" value="male"> Sophomore
+                <input type="radio" name="year" value="female"> Junior
+                <input type="radio" name="year" value="female"> Senior<br>
+                What do you like to do? <br>
+                <input type="checkbox" name="activities1" value="Outdoors"> Just chill and watch TV.<br>
+                <input type="checkbox" name="activities2" value="Sports"> Watch and play sports.<br>
+                <input type="checkbox" name="activities3" value="Beach"> Go to the beach!<br>
+                <ion-button class="submit" style="display: flex" (click)="submitInfo()">Submit</ion-button>
+            </form>
+        </div>
+    </section>
+  
+  
+  
+  </ion-content>
+  
+  <ion-button (click)="pressMe()">Button</ion-button>
+  <ion-button (click)="presentToast()">Toast!</ion-button>
