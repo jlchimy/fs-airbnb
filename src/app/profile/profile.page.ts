@@ -11,11 +11,6 @@ export class ProfilePage implements OnInit {
   constructor(
     private navCtrl: NavController
   ) { }
-
-  navTabs() {
-    this.navCtrl.navigateForward('tabs');
-  }
-
   ngOnInit() {
   }
 

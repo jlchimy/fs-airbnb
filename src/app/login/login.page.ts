@@ -13,7 +13,7 @@ export class LoginPage implements OnInit {
   ) {}
 
   navToProfile() {
-    this.navCtrl.navigateForward('profile');
+    this.navCtrl.navigateForward('tabs/profile');
   }
 
   ngOnInit() {

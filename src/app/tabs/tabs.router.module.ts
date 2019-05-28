@@ -8,6 +8,15 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
+        path: 'profile',
+        children: [
+          {
+            path: '',
+            loadChildren: '../profile/profile.module#ProfilePageModule'
+          }
+        ]
+      },
+      {
         path: 'tab1',
         children: [
           {
@@ -34,24 +43,15 @@ const routes: Routes = [
           }
         ]
       },
-      /**{
+      {
         path: 'tab4',
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../tab4/tab4.module#Tab4PageModule'
           }
         ]
       },
-      {
-        path: 'profile',
-        children: [
-          {
-            path: '',
-            loadChildren: '../profile/profile.module#ProfilePageModule'
-          }
-        ]
-      },*/
       {
         path: '',
         redirectTo: '/tabs/tab1',
