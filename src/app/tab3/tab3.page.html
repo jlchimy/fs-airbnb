@@ -8,7 +8,15 @@
 
     <div style="padding: 10% 10% 1% 10%"><b>Where you've been</b></div>
     <ion-list class="grid">
-        <a>
+      <a *ngFor="let transaction of transactions">
+        <!--transaction.navFunction()-->
+        <button (click)="navToDetails()">
+          <img src="{{transaction.imgName}}" alt="{{transaction.place}}">
+          <b>{{transaction.place}}</b>
+        </button>
+      </a>
+
+        <!--<a>
           <button (click)="navToDetails()">
             <img src="assets/icon/capetown.jpg" alt="Cape Town hotel room">
             <b>Cape Town</b>
@@ -19,6 +27,6 @@
             <img src="assets/icon/rome.jpg" alt="Rome famous architechture">
             <b>Rome</b>
           </button>
-        </a>   
+        </a>--> 
     </ion-list>
 </ion-content>
