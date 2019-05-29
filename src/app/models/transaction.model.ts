@@ -12,6 +12,4 @@ export class Transaction {
     this.navFunction = nav;
   }
 
-
-
 }

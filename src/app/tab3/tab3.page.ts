@@ -21,8 +21,10 @@ export class Tab3Page implements OnInit {
     this.transactions = new Array();
     let capetown = new Transaction(300, "Cape Town", "assets/icon/capetown.jpg", "navToDetails");
     let rome = new Transaction(350, "Rome", "assets/icon/rome.jpg", "navToDetails");
+    let odessa = new Transaction(350, "Odessa", "assets/icon/odessa.jpg", "navToDetails");
     this.transactions.push(capetown);
     this.transactions.push(rome);
+    this.transactions.push(odessa);
 
     this.users = new Array();
 
