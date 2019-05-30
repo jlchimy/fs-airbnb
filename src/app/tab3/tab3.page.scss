@@ -1,6 +1,6 @@
 .grid {
     --columns: 300px 300px 300px 300px;
-    --row: 250px;
+    --row: 220px;
 }
 
 .explore {
@@ -51,4 +51,9 @@ button {
         --columns: 300px;
         --row: 220px;
     }
+}
+
+ion-icon {
+    font-size: 15px;
+    margin-top: 2%;
 }

@@ -3,10 +3,30 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref='tabs/tab3'></ion-back-button>
     </ion-buttons>
-    <ion-title>details</ion-title>
+    <ion-label *ngIf="curr">Rental Details: {{curr.place}}</ion-label>
+    <ion-icon (click)="navToEdit()" name="build"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-grid>
+        <ion-row justify-content-center style="margin: 0 3%">
+          <ion-col>
+            <div class="important">
+              <b>{{propertyName}}</b>
+            </div>
+            <div class="container">
+              <img src="{{imgName}}" alt="{{propertyName}}">
+              <div class="overlay">
+                <div class="text">
+                  <i>*Enter sample review here*</i>
+                </div>
+              </div>
+            </div>
+          </ion-col>
+          
+    
+        </ion-row>
+      </ion-grid>
 
 </ion-content>

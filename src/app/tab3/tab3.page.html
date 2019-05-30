@@ -8,10 +8,11 @@
 
     <div style="padding: 10% 10% 1% 10%"><b>Where you've been</b></div>
     <ion-list class="grid">
-      <ion-card *ngFor="let transaction of transactions">
-        <ion-card-content (click)="navToDetails()">
-          <img src="{{transaction.imgName}}" alt="{{transaction.place}}">
-          <b>{{transaction.place}}</b>
+      <ion-card *ngFor="let property of properties">
+        <ion-card-content (click)="navToDetails(property)">
+          <img src="{{property.imgName}}" alt="{{property.place}}">
+          <b>{{property.place}}:</b>
+          <ion-icon *ngFor="let star of property.stars" name="{{star}}"></ion-icon>
         </ion-card-content>
       </ion-card>
     </ion-list>

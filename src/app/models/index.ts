@@ -1,3 +1,3 @@
 export * from './user.model';
-export * from './transaction.model';
+export * from './property.model';
 export * from './payment.model';

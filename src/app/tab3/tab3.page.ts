@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { User, Transaction, Payment } from '../models/index';
+import { User, Property, Payment } from '../models/index';
+import { PropertyService } from '../services/property.service';
 
 
 @Component({
@@ -10,21 +11,17 @@ import { User, Transaction, Payment } from '../models/index';
 })
 export class Tab3Page implements OnInit {
 
-  public transactions: Array<Transaction>;
+  public properties: Array<Property>;
   public payments: string[];
-
   public users: Array<User>;
 
+
   constructor(
-    private navCtrl: NavController
-  ) {
-    this.transactions = new Array();
-    let capetown = new Transaction(300, "Cape Town", "assets/icon/capetown.jpg", "navToDetails");
-    let rome = new Transaction(350, "Rome", "assets/icon/rome.jpg", "navToDetails");
-    let odessa = new Transaction(350, "Odessa", "assets/icon/odessa.jpg", "navToDetails");
-    this.transactions.push(capetown);
-    this.transactions.push(rome);
-    this.transactions.push(odessa);
+    private navCtrl: NavController,
+    private propertyService: PropertyService
+  ) 
+  {
+    this.properties = this.propertyService.getAllProperties();    
 
     this.users = new Array();
 
@@ -44,8 +41,17 @@ export class Tab3Page implements OnInit {
     this.navCtrl.navigateForward('tabs');
   }
 
-  navToDetails() {
-    this.navCtrl.navigateForward('details');
+  navToDetails(property: Property) {
+    this.navCtrl
+      .navigateBack('details', {
+        queryParams: {
+          propertyName: property.place,
+          price: property.price,
+          img: property.imgName, 
+          id: property.id,
+          stars: property.stars
+        }
+      });
   }
 
   ngOnInit() {
