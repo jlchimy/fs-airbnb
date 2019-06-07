@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='login'>Back to Login</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col size-md="6" size-lg="5" size-xs="12">
+        <div id="welcome">
+          <h4>Please enter the following information:</h4>
+        </div>
+        <div padding>
+          <ion-item>
+            <ion-input [(ngModel)]="user.firstname" type="text" placeholder="First name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [(ngModel)]="user.lastname" type="text" placeholder="Last name"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [(ngModel)]="user.email" type="text" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [(ngModel)]="user.password" type="password" placeholder="Password"></ion-input>
+          </ion-item>
+        </div>
+        <div padding>
+          <ion-button expand="full" size="large" (click)="navToExplore()" shape="round">Register</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

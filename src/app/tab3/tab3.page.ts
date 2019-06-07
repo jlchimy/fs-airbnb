@@ -23,18 +23,7 @@ export class Tab3Page implements OnInit {
   {
     this.properties = this.propertyService.getAllProperties();    
 
-    this.users = new Array();
-
-    let user1 = new User();
-    user1.firstname = "Jacob";
-    user1.lastname = "Chimerine";
-
-    let user2 = new User();
-    user1.firstname = "John";
-    user1.lastname = "Doe";
-
-    this.users.push(user1);
-    this.users.push(user2);
+    this.users = this.propertyService.getAllUsers();
   }
 
   navToExplore() {
