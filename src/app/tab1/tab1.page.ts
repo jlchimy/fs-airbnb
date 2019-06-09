@@ -21,12 +21,12 @@ export class Tab1Page implements OnInit {
     this.navCtrl
       .navigateBack('details', {
         queryParams: {
-          name: property.name,
-          location: property.location,
-          price: property.price,
-          img: property.imgURL, 
-          id: property.id,
-          stars: property.stars
+          id: property.id //,
+          // name: property.name,
+          // location: property.location,
+          // price: property.price,
+          // img: property.imgURL, 
+          // stars: property.stars
         }
       });
   }

@@ -70,22 +70,29 @@ export class DetailsPage implements OnInit {
 
   ngOnInit() {
     let arrow = (data: any) => {
-      this.name = data.params.name;
-      this.location = data.params.location;
-      this.price = data.params.price;
-      this.imgURL = data.params.img;
+    //   this.name = data.params.name;
+    //   this.location = data.params.location;
+    //   this.price = data.params.price;
+    //   this.imgURL = data.params.img;
       this.propertyID = data.params.id;
-      this.numStars = data.params.stars;
+    //   this.numStars = data.params.stars;
 
-      if (!this.name) {
-        alert("Property Not Found");
-      }
-
+    //   if (!this.name) {
+    //     alert("Property Not Found");
+    //   }
     }
 
     this.activatedRoute.queryParamMap.subscribe(
       arrow
     );
+    this.httpClient
+      .get("http://localhost:5000/api/properties/" + this.propertyID)
+      .subscribe(
+        (response: Property) => {
+          console.log(response);
+          this.curr = response[0];
+        }
+      );
   }
 
 }

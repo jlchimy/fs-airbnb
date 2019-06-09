@@ -3,19 +3,19 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref='tabs/tab3'></ion-back-button>
     </ion-buttons>
-    <ion-label *ngIf="curr">Rental Details: {{curr.place}}</ion-label>
+    <ion-label *ngIf="curr">Rental Details: {{curr.name}}</ion-label>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="curr">
   <ion-grid>
     <ion-row justify-content-center style="margin: 0 3%">
       <ion-col>
         <div class="important">
-          <b>{{name}}</b>
+          <b>{{curr.name}}</b>
         </div>
         <div class="container">
-          <img src="{{imgURL}}" alt="{{name}}">
+          <img src="{{curr.imgURL}}" alt="{{curr.name}}">
           <div class="overlay">
             <div class="text">
               <i>*Enter sample review here*</i>
@@ -31,10 +31,10 @@
     <b>Property Details:</b>
     <p style="margin: 0 7% 0 0">
       <ion-item>
-        <b>Location: </b> <a>{{location}}</a>
+        <b>Location: </b> <a>{{curr.location}}</a>
       </ion-item>
       <ion-item>
-        <b>Price: </b> <a>${{price}}</a>
+        <b>Price: </b> <a>${{curr.price}}</a>
       </ion-item>
       <ion-item>
         <b>Number of Guests: </b> <a></a>
