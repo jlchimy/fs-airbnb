@@ -48,13 +48,11 @@
     <section>
       <ion-card>
         <ion-label style="padding: 10px">From: </ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" [(ngModel)]="startDate" max="2025-12-31"
-          [(ngModel)]="myDate"></ion-datetime>
+        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" max="2025-12-31" [(ngModel)]="booking.dateFrom"></ion-datetime>
       </ion-card>
       <ion-card>
         <ion-label style="padding: 10px">To:</ion-label>
-        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" [(ngModel)]="startDate" max="2025-12-31"
-          [(ngModel)]="myDate1"></ion-datetime>
+        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" max="2025-12-31" [(ngModel)]="booking.dateTo"></ion-datetime>
       </ion-card>
     </section>
 

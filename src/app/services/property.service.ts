@@ -10,12 +10,6 @@ export class PropertyService {
 
   constructor() {}
 
-  getAllProperties(): Array<Property> {
-    this.properties = new Array();
-
-    return this.properties;
-  }
-
   findPropertyById(id: number): Property {
     let foundProperty: Property = null;
 
@@ -26,19 +20,7 @@ export class PropertyService {
         }
       } 
     )
-
     return foundProperty;
-  }
-
-  getAllUsers(): Array<User> {
-    this.users = new Array();
-    let user1 = new User('jlchimy', 'myPassword', 'Jacob', 'Chimerine');
-    this.users.push(user1);
-
-    let user2 = new User('jd24', 'different_password');
-    this.users.push(user2);
-
-    return this.users;
   }
 
   findPasswordForUser(email: string): string {

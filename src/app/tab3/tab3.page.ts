@@ -41,7 +41,6 @@ export class Tab3Page implements OnInit {
       .get("http://localhost:5000/api/properties")
       .subscribe(
         (response: Array<Property>) => {
-          console.log(response);
           this.properties = response;
         }
       );

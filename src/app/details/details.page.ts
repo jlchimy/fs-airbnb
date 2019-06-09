@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Property } from '../models';
-import { PropertyService } from '../services/property.service';
 import { HttpClient } from '@angular/common/http';
 import { NavController, AlertController } from '@ionic/angular';
 
@@ -26,13 +25,14 @@ export class DetailsPage implements OnInit {
   public startDate: string;
 
   public booking: any = {
-    dateFrom: "",
-    dateTo: ""
+    propertyID: this.propertyID,
+    dateFrom: new Date(),
+    dateTo: new Date(),
+    userID: parseInt(localStorage.getItem("userId"))
   };
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private propertyService: PropertyService,
     private httpClient: HttpClient,
     private navCtrl: NavController,
     private alertCtrl: AlertController
@@ -42,6 +42,7 @@ export class DetailsPage implements OnInit {
   }
 
   navToExplore() {
+    this.booking.propertyID = this.propertyID;
     this.httpClient
       .post("http://localhost:5000/api/bookings", this.booking)
       .subscribe((response: any) => {
@@ -53,7 +54,6 @@ export class DetailsPage implements OnInit {
           });
       },
         (err) => {
-          // console.log(err);
           this.presentAlert();
         }
       );
@@ -77,10 +77,7 @@ export class DetailsPage implements OnInit {
       this.propertyID = data.params.id;
       this.numStars = data.params.stars;
 
-      this.curr =
-        this.propertyService.findPropertyById(this.propertyID);
-
-      if (!this.curr) {
+      if (!this.name) {
         alert("Property Not Found");
       }
 
