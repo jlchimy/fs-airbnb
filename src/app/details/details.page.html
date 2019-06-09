@@ -4,29 +4,61 @@
       <ion-back-button defaultHref='tabs/tab3'></ion-back-button>
     </ion-buttons>
     <ion-label *ngIf="curr">Rental Details: {{curr.place}}</ion-label>
-    <ion-icon (click)="navToEdit()" name="build"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-grid>
-        <ion-row justify-content-center style="margin: 0 3%">
-          <ion-col>
-            <div class="important">
-              <b>{{propertyName}}</b>
+  <ion-grid>
+    <ion-row justify-content-center style="margin: 0 3%">
+      <ion-col>
+        <div class="important">
+          <b>{{name}}</b>
+        </div>
+        <div class="container">
+          <img src="{{imgURL}}" alt="{{name}}">
+          <div class="overlay">
+            <div class="text">
+              <i>*Enter sample review here*</i>
             </div>
-            <div class="container">
-              <img src="{{imgName}}" alt="{{propertyName}}">
-              <div class="overlay">
-                <div class="text">
-                  <i>*Enter sample review here*</i>
-                </div>
-              </div>
-            </div>
-          </ion-col>
-          
-    
-        </ion-row>
-      </ion-grid>
+          </div>
+        </div>
+      </ion-col>
+
+
+    </ion-row>
+  </ion-grid>
+  <div style="margin: 0 3%">
+    <b>Property Details:</b>
+    <p style="margin: 0 7% 0 0">
+      <ion-item>
+        <b>Location: </b> <a>{{location}}</a>
+      </ion-item>
+      <ion-item>
+        <b>Price: </b> <a>${{price}}</a>
+      </ion-item>
+      <ion-item>
+        <b>Number of Guests: </b> <a></a>
+        <!--{{guests}} -->
+      </ion-item>
+    </p>
+  </div>
+
+  <div style="margin: 0 3%">
+    <b>Request a booking: </b>
+    <section>
+      <ion-card>
+        <ion-label style="padding: 10px">From: </ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" [(ngModel)]="startDate" max="2025-12-31"
+          [(ngModel)]="myDate"></ion-datetime>
+      </ion-card>
+      <ion-card>
+        <ion-label style="padding: 10px">To:</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" [min]="minDate" [(ngModel)]="startDate" max="2025-12-31"
+          [(ngModel)]="myDate1"></ion-datetime>
+      </ion-card>
+    </section>
+
+    <br><ion-button (click)="navToExplore()" shape="round" size="default">Book Now</ion-button>
+  </div>
 
 </ion-content>

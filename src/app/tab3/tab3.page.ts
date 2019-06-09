@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { User, Property, Payment } from '../models/index';
-import { PropertyService } from '../services/property.service';
-
+import { User, Property } from '../models/index';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-tab3',
@@ -12,19 +11,12 @@ import { PropertyService } from '../services/property.service';
 export class Tab3Page implements OnInit {
 
   public properties: Array<Property>;
-  public payments: string[];
-  public users: Array<User>;
-
 
   constructor(
     private navCtrl: NavController,
-    private propertyService: PropertyService
+    private httpClient: HttpClient
   ) 
-  {
-    this.properties = this.propertyService.getAllProperties();    
-
-    this.users = this.propertyService.getAllUsers();
-  }
+  {}
 
   navToExplore() {
     this.navCtrl.navigateForward('tabs');
@@ -34,9 +26,10 @@ export class Tab3Page implements OnInit {
     this.navCtrl
       .navigateBack('details', {
         queryParams: {
-          propertyName: property.place,
+          name: property.name,
+          location: property.location,
           price: property.price,
-          img: property.imgName, 
+          img: property.imgURL, 
           id: property.id,
           stars: property.stars
         }
@@ -44,6 +37,14 @@ export class Tab3Page implements OnInit {
   }
 
   ngOnInit() {
+    this.httpClient
+      .get("http://localhost:5000/api/properties")
+      .subscribe(
+        (response: Array<Property>) => {
+          console.log(response);
+          this.properties = response;
+        }
+      );
   }
 
 }

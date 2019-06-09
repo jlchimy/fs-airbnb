@@ -1,26 +1,24 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models';
+import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
 
 export class UserService {
 
-  public users: Array<User>;
+  public user: User;
 
-  constructor() {}
+  constructor(
+    private httpClient: HttpClient
+  ) {}
 
-  findUserById(id: number): User {
-    let foundUser: User = null;
-
-    this.users.forEach(
-      (property: User) => {
-        if (property.id == id) {
-          foundUser = property;
-        }
-      } 
-    )
-
-    return foundUser;
-  }
+  // login() {
+  //   this.httpClient
+  //     .post("http://localhost:5000/api/users/authentication", this.user)
+  //     .subscribe(
+  //       (response: any) => {},
+  //       err => {}
+  //     );
+  // }
 }

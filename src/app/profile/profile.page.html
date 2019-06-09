@@ -7,12 +7,12 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content>
+  <ion-content *ngIf="user">
     <ion-list class="top">
       <ion-avatar id="avatar">
         <img src="assets/icon/fresh_composite.jpg" alt="selfie">
       </ion-avatar>
-      <b style="font-size: 200%">Hi, I'm Jacob</b>
+      <b style="font-size: 200%">Hi, I'm {{user.firstname}}</b>
       <div style="color: grey">Joined in 2019</div>
       <div style="padding-top: 10%">
         <ion-icon name="text"></ion-icon>
@@ -34,15 +34,15 @@
       <ion-item></ion-item>
       <section class="contact">
           <br>
-          <b style="font-size: 150%">Jacob Provided:</b>
-          <a>
+          <b style="font-size: 150%">{{user.firstname}} Provided:</b>
+          <div>
             <ion-icon name="phone-portrait"></ion-icon>
             Phone Number
-          </a>
-          <a>
+          </div>
+          <div>
             <ion-icon name="mail"></ion-icon>
             Email Address
-          </a>
+          </div>
         </section>
       <ion-item></ion-item>
       <section class="reviews">

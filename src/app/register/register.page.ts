@@ -36,6 +36,7 @@ export class RegisterPage implements OnInit {
       .post("http://localhost:5000/api/users", this.user)
       .subscribe(
         (response: any) => {
+          localStorage.setItem("userId", response.id);
           this.navCtrl
             .navigateForward('tabs', {
               queryParams: {
